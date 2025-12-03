@@ -5,53 +5,61 @@ const logoSrc = "/logo.png";
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <title>Chaumes en Vie – Bientôt en ligne</title>
+    <title>Chaumes en Vie – Bientôt dévoilé</title>
     <meta
       name="description"
-      content="Site officiel de la liste citoyenne Chaumes en Vie à Chaumes-en-Brie. Bientôt en ligne."
+      content="Une nouvelle énergie pour Chaumes-en-Brie. Rendez-vous très bientôt."
     />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
   </head>
   <body>
     <main class="page">
-      {/* blobs floutés en arrière-plan */}
+      <!-- Blobs de couleur -->
       <div class="blob blob-yellow"></div>
       <div class="blob blob-blue"></div>
       <div class="blob blob-green"></div>
 
-      {/* logo animé */}
+      <!-- Logo flouté -->
       <div class="logo-wrapper">
         <img
           src={logoSrc}
-          alt="Logo Chaumes en Vie"
-          class="logo"
+          alt="Logo Chaumes en Vie (teaser)"
+          class="logo blurred"
         />
       </div>
 
-      {/* texte "à venir" */}
-      <p class="soon">À venir bientôt…</p>
+      <!-- Texte teaser -->
+      <p class="soon">
+        <span class="soon-main">
+          Redonnons vie à Chaumes : il est temps d’agir !
+        </span>
+        <br />
+        <span class="highlight animate-colors">
+          Une nouvelle dynamique arrive.
+        </span>
+      </p>
     </main>
 
     <style>
       :root {
-        --cv-red: #c9184a;
         --cv-yellow: #f4a300;
         --cv-green: #007a3d;
         --cv-blue: #008fbf;
+        --cv-red: #c9184a;
       }
 
+      /* Reset */
       * {
         box-sizing: border-box;
       }
-
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
         background: #ffffff;
         color: #334155;
       }
 
+      /* Page */
       .page {
         position: relative;
         min-height: 100vh;
@@ -60,74 +68,121 @@ const logoSrc = "/logo.png";
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        padding: 24px;
       }
 
+      /* Blobs */
       .blob {
         position: absolute;
         border-radius: 999px;
         filter: blur(40px);
-        opacity: 0.6;
+        opacity: 0.55;
         z-index: 0;
       }
-
       .blob-yellow {
-        width: 280px;
-        height: 280px;
-        background: var(--cv-yellow);
-        top: -80px;
-        left: -80px;
-      }
-
-      .blob-blue {
-        width: 320px;
-        height: 320px;
-        background: var(--cv-blue);
-        bottom: -120px;
-        right: -60px;
-      }
-
-      .blob-green {
         width: 220px;
         height: 220px;
+        background: var(--cv-yellow);
+        top: -60px;
+        left: -60px;
+      }
+      .blob-blue {
+        width: 260px;
+        height: 260px;
+        background: var(--cv-blue);
+        bottom: -100px;
+        right: -60px;
+      }
+      .blob-green {
+        width: 200px;
+        height: 200px;
         background: var(--cv-green);
-        top: 40%;
-        right: 10%;
+        top: 50%;
+        right: 6%;
       }
 
+      /* Logo teasé */
       .logo-wrapper {
         position: relative;
         z-index: 1;
         padding: 32px;
         border-radius: 999px;
-        background: #ffffff;
-        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+        background: #ffffffcc;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 22px 50px rgba(15, 23, 42, 0.28);
         animation: float 6s ease-in-out infinite;
+		margin-bottom:50px
       }
-
       .logo {
-        display: block;
         width: min(260px, 70vw);
         height: auto;
+        display: block;
       }
 
+      /* Flou appliqué au logo */
+      .blurred {
+        filter: blur(8px) brightness(1.03);
+        transform: scale(1.015);
+      }
+
+      /* Texte teaser */
       .soon {
         position: relative;
-        margin-top: 24px;
+        margin-top: 20px; /* un peu plus proche du logo */
         z-index: 1;
-        font-size: 0.95rem;
-        color: #6b7280;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        font-weight: 500;
-        animation: fadeIn 2.4s ease-out forwards;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #475569;
+        text-align: center;
+        max-width: 32rem; /* meilleur rendu sur grands écrans */
+        animation: fadeIn 2.2s ease-out forwards;
       }
 
+      .soon-main {
+        display: block;
+        font-size: 0.95rem;
+        color: #64748b;
+      }
+
+      .highlight {
+        color: var(--cv-green);
+        font-weight: 600;
+        font-size: 1.1rem;
+        letter-spacing: 0.03em;
+        display: inline-block;
+        margin-top: 4px;
+      }
+
+      /* Animations couleurs */
+      @keyframes colorCycle {
+        0% {
+          color: var(--cv-yellow);
+        }
+        25% {
+          color: var(--cv-green);
+        }
+        50% {
+          color: var(--cv-blue);
+        }
+        75% {
+          color: var(--cv-red);
+        }
+        100% {
+          color: var(--cv-yellow);
+        }
+      }
+
+      .animate-colors {
+        animation: colorCycle 20s ease-in-out infinite;
+      }
+
+      /* Animations flottement + fadeIn */
       @keyframes float {
         0% {
           transform: translateY(0px) scale(1);
         }
         50% {
-          transform: translateY(-10px) scale(1.01);
+          transform: translateY(-10px) scale(1.015);
         }
         100% {
           transform: translateY(0px) scale(1);
@@ -138,12 +193,43 @@ const logoSrc = "/logo.png";
         0% {
           opacity: 0;
           transform: translateY(8px);
-          filter: blur(4px);
+          filter: blur(6px);
         }
         100% {
           opacity: 1;
           transform: translateY(0);
           filter: blur(0);
+        }
+      }
+
+      /* Ajustements pour grands écrans */
+      @media (min-width: 900px) {
+        .blob-yellow {
+          width: 260px;
+          height: 260px;
+        }
+        .blob-blue {
+          width: 320px;
+          height: 320px;
+        }
+        .blob-green {
+          width: 260px;
+          height: 260px;
+        }
+
+        .logo-wrapper {
+          padding: 40px;
+        }
+
+        .logo {
+          width: 300px;
+        }
+
+        .soon-main {
+          font-size: 1.05rem;
+        }
+        .highlight {
+          font-size: 1.25rem;
         }
       }
     </style>
