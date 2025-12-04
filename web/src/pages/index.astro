@@ -1,5 +1,6 @@
 ---
-const logoSrc = "/logo.png";
+const logoSrc = "/logo.jpeg";
+const friseSrc = "/village.png"; /* Image 2755px */
 ---
 
 <html lang="fr">
@@ -11,6 +12,10 @@ const logoSrc = "/logo.png";
       content="Une nouvelle énergie pour Chaumes-en-Brie. Rendez-vous très bientôt."
     />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
   </head>
   <body>
     <main class="page">
@@ -19,13 +24,9 @@ const logoSrc = "/logo.png";
       <div class="blob blob-blue"></div>
       <div class="blob blob-green"></div>
 
-      <!-- Logo flouté -->
+      <!-- Logo -->
       <div class="logo-wrapper">
-        <img
-          src={logoSrc}
-          alt="Logo Chaumes en Vie (teaser)"
-          class="logo blurred"
-        />
+        <img src={logoSrc} alt="Logo Chaumes en Vie" class="logo rounded" />
       </div>
 
       <!-- Texte teaser -->
@@ -38,6 +39,19 @@ const logoSrc = "/logo.png";
           Une nouvelle dynamique arrive.
         </span>
       </p>
+
+      <!-- 🆕 Frise défilante -->
+
+      <div class="footer">
+        <div class="frise-scroll-container">
+          <div class="frise-scroll-track">
+            <img src={friseSrc} alt="Frise Chaumes en Vie" class="frise" />
+            <img src={friseSrc} alt="Frise Chaumes en Vie" class="frise" />
+          </div>
+        </div>
+        <div class="yline"></div>
+      </div>
+
     </main>
 
     <style>
@@ -59,16 +73,19 @@ const logoSrc = "/logo.png";
         color: #334155;
       }
 
+      html, body {
+        height: 100%;
+      }
+
       /* Page */
       .page {
         position: relative;
-        min-height: 100vh;
+        min-height: 100vh;          
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        padding: 24px;
+        justify-content: flex-start; /* plus de centrage vertical global */
+        overflow: hidden;  
       }
 
       /* Blobs */
@@ -101,7 +118,7 @@ const logoSrc = "/logo.png";
         right: 6%;
       }
 
-      /* Logo teasé */
+      /* Logo */
       .logo-wrapper {
         position: relative;
         z-index: 1;
@@ -111,7 +128,8 @@ const logoSrc = "/logo.png";
         backdrop-filter: blur(6px);
         box-shadow: 0 22px 50px rgba(15, 23, 42, 0.28);
         animation: float 6s ease-in-out infinite;
-		margin-bottom:50px
+        margin-bottom: 50px;        
+        margin-top: 30px;
       }
       .logo {
         width: min(260px, 70vw);
@@ -119,22 +137,22 @@ const logoSrc = "/logo.png";
         display: block;
       }
 
-      /* Flou appliqué au logo */
-      .blurred {
-        filter: blur(8px) brightness(1.03);
-        transform: scale(1.015);
+      /* Bords arrondis */
+      .rounded {
+        border-radius: 80px;
+        overflow: hidden;
       }
 
       /* Texte teaser */
       .soon {
         position: relative;
-        margin-top: 20px; /* un peu plus proche du logo */
+        margin-top: 20px;
         z-index: 1;
         font-size: 1rem;
         line-height: 1.6;
         color: #475569;
         text-align: center;
-        max-width: 32rem; /* meilleur rendu sur grands écrans */
+        max-width: 32rem;
         animation: fadeIn 2.2s ease-out forwards;
       }
 
@@ -153,40 +171,87 @@ const logoSrc = "/logo.png";
         margin-top: 4px;
       }
 
-      /* Animations couleurs */
-      @keyframes colorCycle {
-        0% {
-          color: var(--cv-yellow);
+      /* ============================ */
+      /* 🆕 Frise défilante horizontale */
+      /* ============================ */
+
+      .footer {
+        width: 100%;
+        margin-top: auto;   
+      }
+      .frise-scroll-container {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 40px;
+        line-height: 0;
+        z-index: 2;
+        position: relative;
+      }
+
+      .frise-scroll-track {
+        display: flex;
+        width: calc(2755px * 2);
+        animation: scrollFrise 45s linear infinite;
+      }
+
+      .frise {
+        width: 2755px;
+        height: auto;
+        flex-shrink: 0;
+        pointer-events: none;
+        user-select: none;
+        display: block; 
+        margin-top: auto;
+      }
+
+      .yline {
+        width: 100%;
+        height: 12px;
+        background: #f4a300;
+        z-index: 4;
+        position: relative;
+        margin: 0;
+        margin-top: auto;
+      }
+
+      @keyframes scrollFrise {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-2755px); }
+      }
+
+      /* Mobile */
+      @media (max-width: 800px) {
+        .frise {
+          width: 1600px;
         }
-        25% {
-          color: var(--cv-green);
+
+        .frise-scroll-track {
+          width: calc(1600px * 2);
+          animation-duration: 38s;
         }
-        50% {
-          color: var(--cv-blue);
-        }
-        75% {
-          color: var(--cv-red);
-        }
-        100% {
-          color: var(--cv-yellow);
+
+        @keyframes scrollFrise {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-1600px); }
         }
       }
 
+      /* Animations couleurs */
+      @keyframes colorCycle {
+        0% { color: var(--cv-yellow); }
+        25% { color: var(--cv-green); }
+        50% { color: var(--cv-blue); }
+        75% { color: var(--cv-red); }
+        100% { color: var(--cv-yellow); }
+      }
       .animate-colors {
         animation: colorCycle 20s ease-in-out infinite;
       }
 
-      /* Animations flottement + fadeIn */
       @keyframes float {
-        0% {
-          transform: translateY(0px) scale(1);
-        }
-        50% {
-          transform: translateY(-10px) scale(1.015);
-        }
-        100% {
-          transform: translateY(0px) scale(1);
-        }
+        0% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(-10px) scale(1.015); }
+        100% { transform: translateY(0) scale(1); }
       }
 
       @keyframes fadeIn {
@@ -199,37 +264,6 @@ const logoSrc = "/logo.png";
           opacity: 1;
           transform: translateY(0);
           filter: blur(0);
-        }
-      }
-
-      /* Ajustements pour grands écrans */
-      @media (min-width: 900px) {
-        .blob-yellow {
-          width: 260px;
-          height: 260px;
-        }
-        .blob-blue {
-          width: 320px;
-          height: 320px;
-        }
-        .blob-green {
-          width: 260px;
-          height: 260px;
-        }
-
-        .logo-wrapper {
-          padding: 40px;
-        }
-
-        .logo {
-          width: 300px;
-        }
-
-        .soon-main {
-          font-size: 1.05rem;
-        }
-        .highlight {
-          font-size: 1.25rem;
         }
       }
     </style>
