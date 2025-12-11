@@ -1,272 +1,880 @@
 ---
-const logoSrc = "/logo.jpeg";
-const friseSrc = "/village.png"; /* Image 2755px */
+const logoSrc = "/logo.png";
+const friseSrc = "/village.png"; // image de frise en bas de page
+const villageSrc = "/village_full.png";
+
+// Images des 6 valeurs
+const imgCommunaute = "/valeurs/communaute.jpeg";
+const imgTransparence = "/valeurs/transparence.jpeg";
+const imgHumain = "/valeurs/humain.jpeg";
+const imgLaicite = "/valeurs/laicite.jpeg";
+const imgParticipation = "/valeurs/participation.jpeg";
+const imgProximite = "/valeurs/proximite.jpeg";
 ---
 
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <title>Chaumes en Vie – Bientôt dévoilé</title>
+    <title>Chaumes En Vie – Redonnons vie à Chaumes</title>
     <meta
       name="description"
-      content="Une nouvelle énergie pour Chaumes-en-Brie. Rendez-vous très bientôt."
+      content="Chaumes En Vie : collectif citoyen pour redonner vie à Chaumes-en-Brie autour de 6 piliers essentiels."
     />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
   </head>
+
   <body>
     <main class="page">
-      <!-- Blobs de couleur -->
-      <div class="blob blob-yellow"></div>
-      <div class="blob blob-blue"></div>
-      <div class="blob blob-green"></div>
+      <!-- HERO -->
+      <header class="hero">
+        <div class="hero-inner">
+          <div class="hero-col hero-col-left">
+            <div class="hero-logo">
+              <img src={logoSrc} alt="Logo Chaumes En Vie" />
+            </div>
+          </div>
 
-      <!-- Logo -->
-      <div class="logo-wrapper">
-        <img src={logoSrc} alt="Logo Chaumes en Vie" class="logo rounded" />
-      </div>
+          <div class="hero-col hero-col-right">
+            <p class="hero-tag">Collectif citoyen &ndash; Chaumes-en-Brie</p>
+            <h1>
+              Redonnons vie à Chaumes
+              <span class="hero-subtitle">Il est temps d’agir</span>
+            </h1>
 
-      <!-- Texte teaser -->
-      <p class="soon">
-        <span class="soon-main">
-          Redonnons vie à Chaumes : il est temps d’agir !
-        </span>
-        <br />
-        <span class="highlight animate-colors">
-          Une nouvelle dynamique arrive.
-        </span>
-      </p>
+            <p class="hero-text">
+              Un collectif d’habitantes et d’habitants pour une commune vivante,
+              solidaire et à taille humaine.
+            </p>
 
-      <!-- 🆕 Frise défilante -->
+            <a href="/contact" class="btn btn-primary">
+              Construisons l’avenir de Chaumes-en-Brie
+            </a>
+          </div>
+        </div>
+      </header>
 
-      <div class="footer">
-        <div class="frise-scroll-container">
-          <div class="frise-scroll-track">
-            <img src={friseSrc} alt="Frise Chaumes en Vie" class="frise" />
-            <img src={friseSrc} alt="Frise Chaumes en Vie" class="frise" />
+      <!-- SECTION : POURQUOI CHAUMES EN VIE -->
+      <section id="projet" class="section intro-section">
+        <div class="intro-inner">
+          <div class="intro-content">
+            <h2>Pourquoi «&nbsp;Chaumes En Vie&nbsp;» ?</h2>
+            <p>
+              Nous, <strong>Chaumes En Vie</strong>, sommes un collectif de
+              Calmétiennes et de Calmétiens qui refusons que notre commune
+              devienne une simple ville-dortoir, où la quantité prime sur la
+              qualité de vie et où l’indifférence remplace la solidarité.
+            </p>
+            <p>
+              Patrimoine, histoire, commerces, associations : nous avons tout
+              pour réussir. Ensemble, nous pouvons faire de Chaumes un village
+              vivant, acteur de son propre développement et du bien-être de
+              chacune et chacun.
+            </p>
+            <p>
+              Notre ambition : bâtir, avec des citoyennes et citoyens engagés,
+              un projet municipal au service de toutes et de tous.
+            </p>
+          </div>
+
+          <div class="intro-illustration" aria-hidden="true">
+            <div class="village-card">
+              <div class="village-card-inner">
+                <img src={villageSrc} alt="Illustration Chaumes En Vie" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION : 6 PILIERS -->
+      <section class="section pillars-section">
+        <h2>Nos 6 piliers essentiels</h2>
+
+        <div class="pillars-grid clean">
+          <article class="pillar-clean">
+            <div class="pillar-card">
+              <div class="pillar-halo">
+                <img src={imgHumain} alt="Humain" />
+              </div>
+            </div>
+          </article>
+
+          <article class="pillar-clean">
+            <div class="pillar-card">
+              <div class="pillar-halo">
+                <img src={imgProximite} alt="Proximité" />
+              </div>
+            </div>
+          </article>
+
+          <article class="pillar-clean">
+            <div class="pillar-card">
+              <div class="pillar-halo">
+                <img src={imgTransparence} alt="Transparence" />
+              </div>
+            </div>
+          </article>
+
+          <article class="pillar-clean">
+            <div class="pillar-card">
+              <div class="pillar-halo">
+                <img src={imgParticipation} alt="Participation citoyenne" />
+              </div>
+            </div>
+          </article>
+
+          <article class="pillar-clean">
+            <div class="pillar-card">
+              <div class="pillar-halo">
+                <img src={imgCommunaute} alt="Communauté" />
+              </div>
+            </div>
+          </article>
+
+          <article class="pillar-clean">
+            <div class="pillar-card">
+              <div class="pillar-halo">
+                <img src={imgLaicite} alt="Laïcité" />
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      
+
+      <!-- SECTION : RÉSEAUX SOCIAUX -->
+      <section class="section social-section">
+        <div class="social-inner">
+          <p class="social-title">Suivez notre actualité</p>
+          <p class="social-subtitle">
+            Infos, actualités et rendez-vous : restons en contact au quotidien.
+          </p>
+
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/chaumesenvie"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-chip instagram"
+              aria-label="Suivre Chaumes En Vie sur Instagram"
+            >
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect
+                  x="3.2"
+                  y="3.2"
+                  width="17.6"
+                  height="17.6"
+                  rx="5"
+                  ry="5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4.3"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                />
+                <circle cx="17" cy="7" r="1.3" fill="currentColor" />
+              </svg>
+            </span>
+              <span class="social-label">@chaumesenvie</span>
+            </a>
+
+            <a
+              href="https://www.facebook.com/chaumesenvie"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-chip facebook"
+              aria-label="Suivre Chaumes En Vie sur Facebook"
+            >
+              <span class="social-icon">
+                <!-- petit F de Facebook -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="white"
+                    d="M14 8h2V4h-2c-3 0-5 2-5 5v2H7v4h2v5h4v-5h3v-4h-3v-2c0-.9.7-1.5 1-1.5Z"
+                  />
+                </svg>
+              </span>
+              <span class="social-label">Chaumes En Vie</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION : APPEL À REJOINDRE -->
+      <section class="section cta-section">
+        <div class="cta-inner">
+          <div class="cta-text">
+            <h2>Ensemble pour un village vivant</h2>
+            <p>
+              Vous partagez ces valeurs ?<br />Contribuez à l’avenir de Chaumes-en-Brie
+              en rejoignant l’équipe <strong>«&nbsp;Chaumes En Vie&nbsp;»</strong>.<br />
+              Ne restez pas spectateur : participons ensemble à écrire une
+              nouvelle page pour notre village.
+            </p>
+
+            <div class="cta-actions">
+              <a href="/contact" class="btn btn-light">
+                Rejoindre l’équipe / Nous contacter
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- FRISE EN BAS ANIMÉE -->
+      <footer class="footer">
+        <div class="frise-wrap">
+          <div class="frise-scroll-container">
+            <div class="frise-scroll-track">
+              <img
+                src={friseSrc}
+                alt="Illustration de Chaumes-en-Brie"
+                class="frise"
+              />
+              <img
+                src={friseSrc}
+                alt="Illustration de Chaumes-en-Brie"
+                class="frise"
+              />
+            </div>
           </div>
         </div>
         <div class="yline"></div>
-      </div>
-
+      </footer>
     </main>
+  </body>
 
-    <style>
-      :root {
-        --cv-yellow: #f4a300;
-        --cv-green: #007a3d;
-        --cv-blue: #008fbf;
-        --cv-red: #c9184a;
+  <style>
+    :root {
+      --ce-vert: #176944;
+      --ce-orange: #f28c28;
+      --ce-bleu: #1b4f9c;
+      --ce-violet: #4a2f8d;
+      --ce-jaune: #ffe89a;
+      --ce-bleu-pale: #e9f4ff;
+      --ce-vert-fonce: #0b4224;
+      --background: #f5f7fb;
+      --text-main: #102339;
+      --card-radius: 28px;
+      --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text-main);
+      background: radial-gradient(circle at top, #ffffff 0, #f3f7ff 55%, #edf2fb);
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section {
+      padding: 4rem 1.5rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 2.8rem 1.5rem 4.5rem;
+      background: radial-gradient(circle at top left, #ffe89a 0, #ffffff 55%);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-col-left {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-logo {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 1.4rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-logo img {
+      width: 300px;
+      max-width: 46vw;
+      display: block;
+    }
+
+    .hero-col-right {
+      text-align: left;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(23, 105, 68, 0.08);
+      color: var(--ce-vert);
+      margin: 0 0 0.8rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.15;
+      color: var(--ce-vert);
+    }
+
+    .hero-subtitle {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--ce-bleu);
+    }
+
+    .hero-text {
+      margin: 1.5rem 0 1.8rem;
+      max-width: 32rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #31445b;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.9rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background-color 0.15s ease, color 0.15s ease;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff9b3a, #f27a2a);
+      color: #ffffff;
+      box-shadow: 0 14px 40px rgba(242, 122, 42, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 50px rgba(242, 122, 42, 0.7);
+    }
+
+    /* INTRO SECTION */
+
+    .intro-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: var(--card-radius);
+      padding: 2.8rem 2.4rem;
+      display: grid;
+      gap: 3rem;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      align-items: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .intro-content h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--ce-bleu);
+    }
+
+    .intro-content p {
+      margin: 0.5rem 0;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .intro-illustration {
+      display: flex;
+      justify-content: center;
+    }
+
+    .village-card {
+      position: relative;
+      width: 320px;
+      height: auto;
+      perspective: 1000px;
+    }
+
+    .village-card-inner {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      padding: 0.6rem;
+      background: conic-gradient(
+        from 210deg,
+        #ffe89a,
+        #1e7c3a,
+        #1b4f9c,
+        #f28c28,
+        #ffe89a
+      );
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+      transform: rotate(-2deg);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .village-card-inner img {
+      width: 100%;
+      height: auto; 
+      border-radius: 18px;
+      object-fit: contain;
+      display: block;
+      background: #f8fafc;
+    }
+
+    .village-card-inner:hover {
+      transform: rotate(0deg) translateY(-4px);
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.3);
+    }
+
+    /* PILIERS */
+
+    .pillars-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pillars-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2.2rem;
+      color: var(--ce-bleu);
+    }
+
+    .pillars-grid.clean {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      justify-items: stretch;
+      margin-top: 1.5rem;
+    }
+
+    .pillar-clean {
+      animation: pillarFadeUp 0.7s ease-out both;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .pillar-clean:nth-child(1) { animation-delay: 0.0s; }
+    .pillar-clean:nth-child(2) { animation-delay: 0.06s; }
+    .pillar-clean:nth-child(3) { animation-delay: 0.12s; }
+    .pillar-clean:nth-child(4) { animation-delay: 0.18s; }
+    .pillar-clean:nth-child(5) { animation-delay: 0.24s; }
+    .pillar-clean:nth-child(6) { animation-delay: 0.30s; }
+
+    .pillar-card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 1.4rem 1.2rem 1.6rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
+    }
+
+    .pillar-halo {
+      width: min(260px, 80vw);
+      aspect-ratio: 1 / 1;
+      border-radius: 999px;
+      padding: 3px;
+      background: conic-gradient(
+        from 200deg,
+        #f4a300,
+        #1e7c3a,
+        #008fbf,
+        #c9184a,
+        #4a2f8d,
+        #1b4f9c,
+        #f4a300
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.9rem;
+    }
+
+    .pillar-halo img {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      object-fit: cover;
+      background: #ffffff;
+    }
+
+    .pillar-card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.05rem;
+      color: var(--ce-bleu);
+    }
+
+    .pillar-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #475569;
+    }
+
+    @keyframes pillarFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* CTA SECTION */
+
+    .cta-section {
+      padding-top: 0;
+      padding-bottom: 4.5rem;
+    }
+
+    .cta-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: radial-gradient(circle at top left, #40b06c, #0e5b30);
+      border-radius: var(--card-radius);
+      padding: 2.6rem 2.2rem;
+      color: #ffffff;
+      box-shadow: 0 22px 60px rgba(5, 40, 18, 0.6);
+    }
+
+    .cta-text {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-inner h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .cta-inner p {
+      margin: 0.4rem 0 1.4rem;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .btn-light {
+      background: #ffffff;
+      color: var(--ce-vert-fonce);
+      box-shadow: 0 12px 32px rgba(1, 24, 10, 0.35);
+    }
+
+    .btn-light:hover {
+      background: #f4f8f4;
+      transform: translateY(-1px);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      font-size: 0.9rem;
+      color: #d2f6e0;
+    }
+
+    .social-link {
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .social-link:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .social-separator {
+      opacity: 0.7;
+    }
+
+        /* SECTION RÉSEAUX SOCIAUX */
+
+    .social-section {
+      padding-top: 0;
+      padding-bottom: 4rem;
+    }
+
+    .social-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: var(--card-radius);
+      padding: 2rem 2.2rem 2.4rem;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .social-title {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ce-bleu);
+    }
+
+    .social-subtitle {
+      margin: 0.4rem 0 1.6rem;
+      font-size: 0.98rem;
+      color: #4b5563;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.9rem;
+    }
+
+    .social-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: #f3f4ff;
+      color: var(--ce-bleu);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .social-chip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+      background: #e5ecff;
+    }
+
+    .social-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .social-chip.instagram {
+      background: linear-gradient(135deg, #fdc468, #df4996);
+      color: #ffffff;
+    }
+
+    .social-chip.instagram .social-icon {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .social-chip.facebook {
+      background: #1877f2;
+      color: #ffffff;
+    }
+
+    .social-chip.facebook .social-icon {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    @media (max-width: 600px) {
+      .social-inner {
+        padding-inline: 1.4rem;
       }
 
-      /* Reset */
-      * {
-        box-sizing: border-box;
+      .social-chip {
+        width: 100%;
+        justify-content: center;
       }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-        background: #ffffff;
-        color: #334155;
-      }
+    }
 
-      html, body {
-        height: 100%;
-      }
 
-      /* Page */
-      .page {
-        position: relative;
-        min-height: 100vh;
-        min-height: 100dvh;          
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start; /* plus de centrage vertical global */
-        overflow: hidden;  
-      }
+    /* FRISE ANIMÉE */
 
-      /* Blobs */
-      .blob {
-        position: absolute;
-        border-radius: 999px;
-        filter: blur(40px);
-        opacity: 0.55;
-        z-index: 0;
-      }
-      .blob-yellow {
-        width: 220px;
-        height: 220px;
-        background: var(--cv-yellow);
-        top: -60px;
-        left: -60px;
-      }
-      .blob-blue {
-        width: 260px;
-        height: 260px;
-        background: var(--cv-blue);
-        bottom: -100px;
-        right: -60px;
-      }
-      .blob-green {
-        width: 200px;
-        height: 200px;
-        background: var(--cv-green);
-        top: 50%;
-        right: 6%;
-      }
+    .footer {
+      width: 100%;
+      margin-top: auto;
+    }
 
-      /* Logo */
-      .logo-wrapper {
-        position: relative;
-        z-index: 1;
-        padding: 32px;
-        border-radius: 999px;
-        background: #ffffffcc;
-        backdrop-filter: blur(6px);
-        box-shadow: 0 22px 50px rgba(15, 23, 42, 0.28);
-        animation: float 6s ease-in-out infinite;
-        margin-bottom: 50px;        
-        margin-top: 30px;
-      }
-      .logo {
-        width: min(260px, 70vw);
-        height: auto;
-        display: block;
-      }
+.frise-wrap {
+  position: relative;
 
-      /* Bords arrondis */
-      .rounded {
-        border-radius: 80px;
-        overflow: hidden;
-      }
+  padding-top: 1.2rem;
+}
 
-      /* Texte teaser */
-      .soon {
-        position: relative;
-        margin-top: 20px;
-        z-index: 1;
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #475569;
+    .frise-scroll-container {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      position: relative;
+    }
+
+    .frise-scroll-track {
+      display: flex;
+      width: calc(2755px * 2);
+      animation: scrollFrise 45s linear infinite;
+    }
+
+    .frise {
+      width: 2755px;
+      height: auto;
+      flex-shrink: 0;
+      pointer-events: none;
+      user-select: none;
+      display: block;
+    }
+
+    .yline {
+      width: 100%;
+      height: 10px;
+      background: var(--ce-orange);
+      margin: 0;
+    }
+
+    @keyframes scrollFrise {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-2755px); }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
         text-align: center;
-        max-width: 32rem;
-        animation: fadeIn 2.2s ease-out forwards;
       }
 
-      .soon-main {
-        display: block;
-        font-size: 0.95rem;
-        color: #64748b;
+      .hero-col-right {
+        text-align: center;
       }
 
-      .highlight {
-        color: var(--cv-green);
-        font-weight: 600;
-        font-size: 1.1rem;
-        letter-spacing: 0.03em;
-        display: inline-block;
-        margin-top: 4px;
+      .hero-text {
+        margin-inline: auto;
       }
 
-      /* ============================ */
-      /* 🆕 Frise défilante horizontale */
-      /* ============================ */
-
-      .footer {
-        width: 100%;
-        margin-top: auto;   
-      }
-      .frise-scroll-container {
-        width: 100%;
-        overflow: hidden;
-        margin-top: 40px;
-        line-height: 0;
-        z-index: 2;
-        position: relative;
+      .intro-inner {
+        grid-template-columns: 1fr;
+        padding: 2.2rem 1.6rem;
       }
 
-      .frise-scroll-track {
-        display: flex;
-        width: calc(2755px * 2);
-        animation: scrollFrise 45s linear infinite;
+      .intro-illustration {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding-inline: 1.2rem;
+      }
+
+      .hero {
+        padding-inline: 1.2rem;
+      }
+
+      .pillars-grid.clean {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cta-inner {
+        padding-inline: 1.6rem;
       }
 
       .frise {
-        width: 2755px;
-        height: auto;
-        flex-shrink: 0;
-        pointer-events: none;
-        user-select: none;
-        display: block; 
-        margin-top: auto;
+        width: 1600px;
       }
 
-      .yline {
-        width: 100%;
-        height: 12px;
-        background: #f4a300;
-        z-index: 4;
-        position: relative;
-        margin: 0;
-        margin-top: auto;
+      .frise-scroll-track {
+        width: calc(1600px * 2);
+        animation-duration: 38s;
       }
 
       @keyframes scrollFrise {
         0% { transform: translateX(0); }
-        100% { transform: translateX(-2755px); }
+        100% { transform: translateX(-1600px); }
+      }
+    }
+
+    @media (max-width: 520px) {
+      .pillars-grid.clean {
+        grid-template-columns: 1fr;
       }
 
-      /* Mobile */
-      @media (max-width: 800px) {
-        .frise {
-          width: 1600px;
-        }
-
-        .frise-scroll-track {
-          width: calc(1600px * 2);
-          animation-duration: 38s;
-        }
-
-        @keyframes scrollFrise {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-1600px); }
-        }
+      .village-card {
+        width: 220px;
+        height: 180px;
       }
 
-      /* Animations couleurs */
-      @keyframes colorCycle {
-        0% { color: var(--cv-yellow); }
-        25% { color: var(--cv-green); }
-        50% { color: var(--cv-blue); }
-        75% { color: var(--cv-red); }
-        100% { color: var(--cv-yellow); }
-      }
-      .animate-colors {
-        animation: colorCycle 20s ease-in-out infinite;
+      .cta-inner {
+        border-radius: 22px;
       }
 
-      @keyframes float {
-        0% { transform: translateY(0px) scale(1); }
-        50% { transform: translateY(-10px) scale(1.015); }
-        100% { transform: translateY(0) scale(1); }
+      .pillar-halo {
+        width: min(220px, 80vw);
       }
+    }
 
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-          transform: translateY(8px);
-          filter: blur(6px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-          filter: blur(0);
-        }
-      }
-    </style>
-  </body>
+  </style>
 </html>

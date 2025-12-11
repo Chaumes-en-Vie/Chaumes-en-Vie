@@ -1,0 +1,661 @@
+---
+const logoSrc = "/logo.png"; // adapte si ton logo est en .jpeg
+const friseSrc = "/village.png"; /* Image 2755px */
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nous contacter – Chaumes En Vie</title>
+    <meta
+      name="description"
+      content="Contactez l'équipe Chaumes En Vie : questions, idées, propositions."
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+
+  <body>
+    <main class="page">
+      <!-- HERO -->
+      <header class="hero">
+        <div class="hero-inner">
+          <div class="hero-col hero-col-left">
+            <div class="hero-logo">
+              <img src={logoSrc} alt="Logo Chaumes En Vie" />
+            </div>
+          </div>
+
+          <div class="hero-col hero-col-right">
+            <p class="hero-tag">Collectif citoyen &ndash; Chaumes-en-Brie</p>
+            <h1>
+              Nous contacter
+              <span class="hero-subtitle">Échangeons sur l’avenir de Chaumes-en-Brie</span>
+            </h1>
+
+            <p class="hero-text">
+              Une question, une idée, une envie de rejoindre la dynamique&nbsp;?
+              Laissez-nous un message : nous reviendrons vers vous dès que possible.
+            </p>
+
+            <a href="#contact-form" class="btn btn-primary">
+              Envoyer un message à l’équipe
+            </a>
+
+            <p class="back-link-wrapper">
+              <a href="/" class="back-link">← Retour à la page d’accueil</a>
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- SECTION : FORMULAIRE -->
+      <section class="section contact-section">
+        <div class="contact-inner">
+          <div class="contact-copy">
+            <h2>Écrivez à l’équipe «&nbsp;Chaumes En Vie&nbsp;»</h2>
+            <p>
+              Que ce soit pour partager une proposition, signaler un sujet local
+              ou simplement en savoir plus sur notre collectif, ce formulaire est là pour vous.
+            </p>
+            <p>
+              L’ensemble des messages est lu par des membres de l’équipe
+              et reste confidentiel.
+            </p>
+          </div>
+
+          <!-- Formulaire Netlify -->
+          <form
+            id="contact-form"
+            name="contact"
+            method="POST"
+            action="/merci"
+            netlify
+            netlify-honeypot="bot-field"
+            class="contact-form"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+
+            <p class="hidden">
+              <label>
+                Ne pas remplir :
+                <input name="bot-field" />
+              </label>
+            </p>
+
+            <label>
+              Nom et prénom
+              <input
+                type="text"
+                name="nom"
+                autocomplete="name"
+                required
+              />
+            </label>
+
+            <label>
+              Adresse e-mail
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+            </label>
+
+            <label>
+              Sujet
+              <input
+                type="text"
+                name="sujet"
+                required
+              />
+            </label>
+
+            <label>
+              Message
+              <textarea
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </label>
+
+            <button type="submit" class="btn btn-primary btn-submit">
+              Envoyer mon message
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- SECTION : RÉSEAUX SOCIAUX (même que sur la home) -->
+      <section class="section social-section">
+        <div class="social-inner">
+          <p class="social-title">Suivez notre actualité</p>
+          <p class="social-subtitle">
+            Infos, actualités et rendez-vous : restons en contact au quotidien.
+          </p>
+
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/chaumesenvie"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-chip instagram"
+              aria-label="Suivre Chaumes En Vie sur Instagram"
+            >
+              <span class="social-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect
+                    x="3.2"
+                    y="3.2"
+                    width="17.6"
+                    height="17.6"
+                    rx="5"
+                    ry="5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4.3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                  />
+                  <circle cx="17" cy="7" r="1.3" fill="currentColor" />
+                </svg>
+              </span>
+              <span class="social-label">@chaumesenvie</span>
+            </a>
+
+            <a
+              href="https://www.facebook.com/chaumesenvie"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-chip facebook"
+              aria-label="Suivre Chaumes En Vie sur Facebook"
+            >
+              <span class="social-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="white"
+                    d="M14 8h2V4h-2c-3 0-5 2-5 5v2H7v4h2v5h4v-5h3v-4h-3v-2c0-.9.7-1.5 1-1.5Z"
+                  />
+                </svg>
+              </span>
+              <span class="social-label">Chaumes En Vie</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FRISE EN BAS ANIMÉE -->
+      <footer class="footer">
+        <div class="frise-wrap">
+          <div class="frise-scroll-container">
+            <div class="frise-scroll-track">
+              <img
+                src={friseSrc}
+                alt="Frise Chaumes En Vie"
+                class="frise"
+              />
+              <img
+                src={friseSrc}
+                alt="Frise Chaumes En Vie"
+                class="frise"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="yline"></div>
+      </footer>
+    </main>
+  </body>
+
+  <style>
+    :root {
+      --ce-vert: #176944;
+      --ce-orange: #f28c28;
+      --ce-bleu: #1b4f9c;
+      --ce-violet: #4a2f8d;
+      --ce-jaune: #ffe89a;
+      --ce-bleu-pale: #e9f4ff;
+      --ce-vert-fonce: #0b4224;
+      --background: #f5f7fb;
+      --text-main: #102339;
+      --card-radius: 28px;
+      --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text-main);
+      background: radial-gradient(circle at top, #ffffff 0, #f3f7ff 55%, #edf2fb);
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section {
+      padding: 4rem 1.5rem;
+    }
+
+    /* HERO – aligné sur la home */
+
+    .hero {
+      padding: 2.8rem 1.5rem 3.5rem;
+      background: radial-gradient(circle at top left, #ffe89a 0, #ffffff 55%);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-col-left {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-logo {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 1.4rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-logo img {
+      width: 300px;
+      max-width: 46vw;
+      display: block;
+    }
+
+    .hero-col-right {
+      text-align: left;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(23, 105, 68, 0.08);
+      color: var(--ce-vert);
+      margin: 0 0 0.8rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.15;
+      color: var(--ce-vert);
+    }
+
+    .hero-subtitle {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--ce-bleu);
+    }
+
+    .hero-text {
+      margin: 1.5rem 0 1.4rem;
+      max-width: 32rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #31445b;
+    }
+
+    .back-link-wrapper {
+      margin-top: 0.6rem;
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .back-link:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.9rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background-color 0.15s ease, color 0.15s ease;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff9b3a, #f27a2a);
+      color: #ffffff;
+      box-shadow: 0 14px 40px rgba(242, 122, 42, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 50px rgba(242, 122, 42, 0.7);
+    }
+
+    /* SECTION CONTACT */
+
+    .contact-section {
+      padding-top: 3rem;
+      padding-bottom: 4rem;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: var(--card-radius);
+      padding: 2.8rem 2.4rem;
+      display: grid;
+      gap: 2.5rem;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      align-items: flex-start;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-copy h2 {
+      margin: 0 0 1rem;
+      font-size: 1.7rem;
+      color: var(--ce-bleu);
+    }
+
+    .contact-copy p {
+      margin: 0.4rem 0;
+      line-height: 1.7;
+      font-size: 0.98rem;
+      color: #4b5563;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+      color: #475569;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      border-radius: 0.7rem;
+      border: 1px solid #cbd5f1;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      background: #f8fafc;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease,
+        background-color 0.18s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--ce-vert);
+      box-shadow: 0 0 0 1px rgba(23, 105, 68, 0.18);
+      background: #ffffff;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .btn-submit {
+      margin-top: 0.8rem;
+      align-self: flex-end;
+    }
+
+    /* SECTION RÉSEAUX SOCIAUX – identique à la home */
+
+    .social-section {
+      padding-top: 0;
+      padding-bottom: 4rem;
+    }
+
+    .social-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: var(--card-radius);
+      padding: 2rem 2.2rem 2.4rem;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .social-title {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ce-bleu);
+    }
+
+    .social-subtitle {
+      margin: 0.4rem 0 1.6rem;
+      font-size: 0.98rem;
+      color: #4b5563;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.9rem;
+    }
+
+    .social-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: #f3f4ff;
+      color: var(--ce-bleu);
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .social-chip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+      background: #e5ecff;
+    }
+
+    .social-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .social-chip.instagram {
+      background: linear-gradient(135deg, #fdc468, #df4996);
+      color: #ffffff;
+    }
+
+    .social-chip.instagram .social-icon {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .social-chip.facebook {
+      background: #1877f2;
+      color: #ffffff;
+    }
+
+    .social-chip.facebook .social-icon {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    @media (max-width: 600px) {
+      .social-inner {
+        padding-inline: 1.4rem;
+      }
+
+      .social-chip {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* FRISE ANIMÉE */
+
+    .footer {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .frise-wrap {
+      position: relative;
+      padding-top: 1.2rem;
+    }
+
+    .frise-scroll-container {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      position: relative;
+    }
+
+    .frise-scroll-track {
+      display: flex;
+      width: calc(2755px * 2);
+      animation: scrollFrise 45s linear infinite;
+    }
+
+    .frise {
+      width: 2755px;
+      height: auto;
+      flex-shrink: 0;
+      pointer-events: none;
+      user-select: none;
+      display: block;
+    }
+
+    .yline {
+      width: 100%;
+      height: 10px;
+      background: var(--ce-orange);
+      margin: 0;
+    }
+
+    @keyframes scrollFrise {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-2755px); }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-col-right {
+        text-align: center;
+      }
+
+      .hero-text {
+        margin-inline: auto;
+      }
+
+      .back-link-wrapper {
+        margin-top: 0.7rem;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        padding: 2.2rem 1.7rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding-inline: 1.2rem;
+      }
+
+      .hero {
+        padding-inline: 1.2rem;
+      }
+
+      .frise {
+        width: 1600px;
+      }
+
+      .frise-scroll-track {
+        width: calc(1600px * 2);
+        animation-duration: 38s;
+      }
+
+      @keyframes scrollFrise {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-1600px); }
+      }
+    }
+
+    @media (max-width: 520px) {
+      .contact-inner {
+        border-radius: 22px;
+      }
+    }
+  </style>
+</html>
