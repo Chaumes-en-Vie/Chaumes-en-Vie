@@ -53,6 +53,27 @@ const imgProximite = "/valeurs/proximite.jpeg";
         </div>
       </header>
 
+      <!-- ENCART : MESSAGE IMPORTANT -->
+      <section class="section tease-section" aria-label="Annonce">
+        <div class="tease-inner">
+
+          <div class="tease-content">
+            <h2 class="tease-title">
+              Il ne manque plus que vous pour construire la suite !
+            </h2>
+            <p class="tease-sub">
+              Rejoignez la dynamique : votre avis compte et la suite arrive très prochainement.
+            </p>
+
+            <div class="tease-actions">
+              <a href="/contact" class="btn btn-primary tease-btn">
+                Participer / Nous contacter
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- SECTION : POURQUOI CHAUMES EN VIE -->
       <section id="projet" class="section intro-section">
         <div class="intro-inner">
@@ -873,6 +894,176 @@ const imgProximite = "/valeurs/proximite.jpeg";
 
       .pillar-halo {
         width: min(220px, 80vw);
+      }
+    }
+
+    /* ENCART TEASER */
+
+    /* ENCART TEASER – VERSION CONTRASTÉE LOGO */
+
+    .tease-section{
+      padding-top: 1.4rem;
+      padding-bottom: 1.4rem;
+    }
+
+    .tease-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 26px;
+      padding: 1.4rem 1.4rem;
+      position: relative;
+      overflow: hidden;
+
+      /* CONTRASTE FORT */
+ background: radial-gradient(circle at top right, rgba(242, 140, 40, 0.18), transparent 45%), linear-gradient(135deg, rgba(19, 21, 26, 0.29), #5aa3f3);
+      box-shadow:
+        0 22px 60px rgba(27,79,156,0.45),
+        inset 0 0 0 1px rgba(255,255,255,0.08);
+
+      animation: teaseFloat 4s ease-in-out infinite;
+    }
+
+    /* halo vert doux */
+    .tease-inner::before{
+      content:"";
+      position:absolute;
+      inset:-35%;
+      background: radial-gradient(circle, rgba(23,105,68,0.35), transparent 60%);
+      filter: blur(40px);
+      opacity: 0.7;
+      animation: teaseGlow 7s ease-in-out infinite alternate;
+      pointer-events:none;
+    }
+
+    /* shimmer orange discret */
+    .tease-inner::after{
+      content:"";
+      position:absolute;
+      top:-40%;
+      left:-60%;
+      width: 55%;
+      height: 180%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(242,140,40,0.45),
+        transparent
+      );
+      transform: rotate(12deg);
+      animation: teaseShimmer 4s ease-in-out infinite;
+      pointer-events:none;
+    }
+
+    .tease-content{
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0.9rem 0.6rem;
+    }
+
+    /* badge orange très visible */
+    .tease-badge{
+      position:absolute;
+      z-index: 2;
+      top: 14px;
+      right: 14px;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: linear-gradient(135deg, #ff9b3a, #f27a2a);
+      box-shadow: 0 12px 30px rgba(242, 122, 42, 0.55);
+    }
+
+    .tease-kicker{
+      margin: 0 0 0.25rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ffe89a;
+    }
+
+    .tease-title{
+      margin: 0.25rem 0 0.55rem;
+      font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+      line-height: 1.2;
+      color: #ffffff;
+    }
+
+    .tease-sub{
+      margin: 0 auto 1rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.98rem;
+    }
+
+    .tease-actions{
+      display:flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    /* bouton encore plus punchy ici */
+    .tease-btn{
+      background: linear-gradient(135deg, #ff9b3a, #f27a2a);
+      color: #ffffff;
+      box-shadow: 0 16px 40px rgba(242, 122, 42, 0.6);
+      animation: teasePulse 2.2s ease-in-out infinite;
+      width: 60%;
+    }
+
+    .tease-hint{
+      font-weight: 700;
+      color: #ffe89a;
+      background: rgba(255,232,154,0.15);
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    /* Animations */
+
+    @keyframes teaseFloat{
+      0%,100%{ transform: translateY(0); }
+      50%{ transform: translateY(-4px); }
+    }
+
+    @keyframes teaseGlow{
+      from{ opacity: 0.5; }
+      to{ opacity: 0.85; }
+    }
+
+    @keyframes teaseShimmer{
+      0%{ left:-60%; opacity: 0; }
+      35%{ opacity: 0.9; }
+      65%{ opacity: 0.6; }
+      100%{ left:120%; opacity: 0; }
+    }
+
+    @keyframes teasePulse{
+      0%,100%{ transform: translateY(0) scale(1); }
+      50%{ transform: translateY(-1px) scale(1.04); }
+    }
+
+    /* accessibilité */
+    @media (prefers-reduced-motion: reduce){
+      .tease-inner,
+      .tease-inner::before,
+      .tease-inner::after,
+      .tease-btn{
+        animation: none !important;
+      }
+    }
+
+    /* mobile */
+    @media (max-width: 600px){
+      .tease-inner{
+        padding: 1.15rem 1rem;
       }
     }
 
