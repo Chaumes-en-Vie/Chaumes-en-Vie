@@ -756,6 +756,13 @@ const friseSrc = "/village.png";
         @keyframes scrollFrise { 0% { transform: translateX(0); } 100% { transform: translateX(-1600px); } }
       }
 
+      @media (max-width: 680px) {
+        .programme-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+      }
+
       @media (max-width: 600px) {
         .chip { width: 100%; }
         .toc-chips { gap: 0.5rem; }
